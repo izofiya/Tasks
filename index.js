@@ -43,6 +43,42 @@ function Article() {
 	setTimeout(function() { console.log(i); }, i * 1000);
     }
 
+// 4. Создайте функцию, которая позволяет решить следующую задачу: на основании полученного массива чисел вернуть новый массив в котором все положительные числа и ноль сохранили свою позицию, а отрицательные отсортированы по возрастанию (от меньшего к большему).
+// Пример: resultFunction([23, -22, -1, 16, 99, -47, 0, -3]) // вернёт массив [23, -47, -22, 16, 99, -3, 0, -1]
+// Напишите реализацию resultFunction.
+
+  //   function resultFunction(arr) {
+  //     let newArr = [];
+  //     arr.map(el => {
+  //       if (el < 0) {
+  //         arr.sort(function(a, b) {
+  //           if (a < b) {
+  //             return a - b;
+  //             }
+  //       });
+  //       newArr.push(el);
+  //       }
+  //       if(el >= 0 ) {
+  //         newArr.push(el);
+  //       }
+  //     });
+  //   return newArr;
+  // };
+
+    function resultFunction(arr) {
+      arr.sort(function(a, b) {
+        if (a >= 0 ) {
+          return 1;
+        }
+        if (a < b && a < 0) {
+          return a - b;
+          }
+    });
+    return arr;
+  }
+  console.log(resultFunction([23, -22, -1, 16, 99, -47, 0, -3]));
+
+  
     // 5. Напишите код, который при клике на любой div внутри root будет выводить в консоль его id:
     let divRoot = document.getElementById("root");
     divRoot.addEventListener("click", function (event) {
